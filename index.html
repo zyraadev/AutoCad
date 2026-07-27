@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+name="viewport"
+content="width=device-width,initial-scale=1.0">
+
+<title>Floor Plan Viewer</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link
+href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+rel="stylesheet">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+
+<link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+
+<div id="app">
+
+    <!-- SIDEBAR -->
+
+    <aside id="sidebar">
+
+        <div class="sidebar-header">
+
+            <div class="logo">
+
+                <div class="logo-icon">
+                    <img src="assets/zyra_pfp.png" alt="Zyra">
+                </div>
+
+                <div>
+
+                    <h2>Dream House</h2>
+
+                    <span>by Zyra Flores</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="sheet-title">
+
+            FLOORS
+
+        </div>
+
+        <div id="sheetList">
+
+            <button class="sheet active">
+
+                <div class="sheet-thumb"></div>
+
+                <div class="sheet-info">
+
+                    <strong>Floor 1</strong>
+
+                    <small>Ground Level</small>
+
+                </div>
+
+            </button>
+
+            <button class="sheet">
+
+                <div class="sheet-thumb"></div>
+
+                <div class="sheet-info">
+
+                    <strong>Floor 2</strong>
+
+                    <small>Upper Level</small>
+
+                </div>
+
+            </button>
+
+        </div>
+
+    </aside>
+
+    <!-- MAIN -->
+
+    <main id="workspace">
+
+        <header>
+
+            <div class="left">
+
+                <button id="toggleSidebar">
+
+☰
+
+                </button>
+
+                <h1>
+
+Zyra's Dream House Floor (1)
+
+                </h1>
+
+            </div>
+
+        </header>
+
+        <section id="viewer">
+
+            <div id="canvasContainer" style="opacity:0">
+
+                <canvas id="pdfCanvas"></canvas>
+
+            </div>
+
+            <!-- FLOATING TOOLBAR -->
+
+            <div id="toolbar">
+
+                <button id="zoomIn" title="Zoom In">+</button>
+
+                <button id="zoomOut" title="Zoom Out">−</button>
+
+                <button id="resetView" title="Reset View">⌂</button>
+
+                <div class="toolbar-sep"></div>
+
+                <button id="fitButton" title="Fit to Screen">⊞</button>
+
+                <button id="fullscreenButton" title="Fullscreen">⛶</button>
+
+            </div>
+
+            <!-- MINIMAP -->
+
+            <div id="minimap">
+
+                <canvas id="miniCanvas"></canvas>
+
+                <div id="miniViewport"></div>
+
+            </div>
+
+            <!-- STATUS BAR -->
+
+            <div id="statusbar">
+
+                <span id="zoomLevel">
+
+100%
+
+                </span>
+
+                <span class="separator"></span>
+
+                <span>
+
+Floor 1
+
+                </span>
+
+                <span class="separator"></span>
+
+                <span id="cursorPosition">
+
+0 , 0
+
+                </span>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+<script src="app.js"></script>
+
+</body>
+
+</html>
